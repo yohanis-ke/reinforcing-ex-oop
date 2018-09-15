@@ -6,3 +6,15 @@ class Location
     @name
   end
 end
+
+class Trip < Location
+  def initialize
+    @locations = []
+  end
+
+  def add(name)
+    location = Location.new(name)
+    @locations << location
+    return location
+  end
+end
