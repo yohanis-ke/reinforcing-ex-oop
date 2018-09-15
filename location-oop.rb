@@ -17,4 +17,21 @@ class Trip < Location
     @locations << location
     return location
   end
+
+  def travels
+    puts 'Began trip'
+    @locations.each_cons(2) do |location|
+      puts "Travelled from #{location[0].name} to #{location[1].name}"
+
+    end
+    puts 'Ended trip'
+  end
 end
+
+trip1= Trip.new
+trip1.add('Ottawa')
+trip1.add('Montreal')
+trip1.add('Quebec')
+trip1.add('Alberta')
+
+trip1.travels
